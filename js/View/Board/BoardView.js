@@ -1,4 +1,4 @@
-class Board
+class BoardView
 {
     constructor(_boardSize)
     {
