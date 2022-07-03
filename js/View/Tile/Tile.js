@@ -9,7 +9,7 @@ class Tile
     {
         const TileElement = document.createElement( 'div' );
         TileElement.classList.add( 'tile' );
-        TileElement.innerHTML = this.displayValue;
+        TileElement.innerHTML = this.displayValue == 0 ? '' : this.displayValue;
          
         return TileElement;
     }

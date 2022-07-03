@@ -4,6 +4,7 @@ class BoardShuffle
     {
       
     }
+    
     shuffleBoardValues(array)
     {
         let currentIndex = array.length, randomIndex;

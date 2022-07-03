@@ -1,19 +1,18 @@
 class BoardView
 {
-    constructor(_boardSize)
+    constructor()
     {
-        this.boardSize = _boardSize;
         this.boardElement = document.getElementById('board');
     }
-    renderBoard()
+    renderBoard(board)
     { 
-        for(var rowIndex=0; rowIndex < this.boardSize; rowIndex++)
+        for(var rowIndex=0; rowIndex < board.size; rowIndex++)
         {
             var rowElement = this.boardElement.insertRow(rowIndex);
-            for(var colIndex=0; colIndex< this.boardSize; colIndex++)  
+            for(var colIndex=0; colIndex< board.size; colIndex++)  
             {
                 var cellElement =  rowElement.insertCell(colIndex);
-                var tile = new Tile(rowIndex*this.boardSize+colIndex);
+                var tile = new Tile(board.values[rowIndex*board.size+colIndex]);
                 cellElement.appendChild(tile.renderTile()); 
             }
         }
