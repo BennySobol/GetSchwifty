@@ -30,20 +30,16 @@ class SolvableValidator
                 }
             }
         }
-        return {  parity, blankRow };
+        return { parity, blankRow };
     }
 
     validateBoardSolvable(board)
     {
         let {parity, blankRow} = this.countInversions(board);
-        console.log( parity, blankRow);
+        console.log(parity, blankRow);
         if (board.size % 2 == 0)
         {
-            if (blankRow % 2 == 0)
-            {
-                return parity % 2 == 0;
-            }
-            return parity % 2 != 0;         
+            return (parity + blankRow) % 2 == 0;
         }
         return parity % 2 == 0;
     }
