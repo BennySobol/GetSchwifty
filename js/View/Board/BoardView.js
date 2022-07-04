@@ -4,17 +4,50 @@ class BoardView
     {
         this.boardElement = document.getElementById('board');
     }
+
+    bindOnTileClick(callback, size)
+    {
+        let cellBoardIndex = 0;
+        for(let rowIndex=0; rowIndex < size; rowIndex++)
+        {
+            for(let colIndex=0; colIndex< size; colIndex++)
+            {
+                let index = cellBoardIndex++;
+                let cell = this._getTableCell(rowIndex, colIndex);
+                cell.addEventListener('click', () => { callback(index)});; 
+            }
+        }
+    }
+
     renderBoard(board)
     { 
-        for(var rowIndex=0; rowIndex < board.size; rowIndex++)
+        for(let rowIndex=0; rowIndex < board.size; rowIndex++)
         {
-            var rowElement = this.boardElement.insertRow(rowIndex);
-            for(var colIndex=0; colIndex< board.size; colIndex++)  
+            let rowElement = this.boardElement.insertRow(rowIndex);
+            for(let colIndex=0; colIndex< board.size; colIndex++)  
             {
-                var cellElement =  rowElement.insertCell(colIndex);
-                var tile = new Tile(board.values[rowIndex*board.size+colIndex]);
+                let cellElement =  rowElement.insertCell(colIndex);
+
+                let cellBoardIndex = rowIndex*board.size+colIndex;
+                let tile = new Tile(board.values[cellBoardIndex]);
+            
                 cellElement.appendChild(tile.renderTile()); 
             }
         }
+    }
+
+    _getTableCell(row, col)
+    { 
+        return this.boardElement.rows[row].cells[col];
+    }
+
+    moveTile(fromIndex, toIndex, size)
+    {
+        let fromElement = this._getTableCell(Number.parseInt(fromIndex/size), fromIndex%size);
+        let toElement = this._getTableCell(Number.parseInt(toIndex/size), toIndex%size);
+        let temp = fromElement.innerHTML;
+
+        fromElement.innerHTML = toElement.innerHTML;
+        toElement.innerHTML = temp;
     }
 }
