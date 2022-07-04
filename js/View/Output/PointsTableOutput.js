@@ -21,6 +21,6 @@ class PointsTableOutput {
 
     _renderEntry(entry) 
     {
-        return `Moves: ${entry.numOfMoves}, Player: ${entry.playerName}, Start date: ${entry.startDate}, Board size: ${entry.boardSize}`;
+        return ` Player: ${entry.playerName}, moves: ${entry.numOfMoves}, dificulty: ${entry.boardSize}`;
     }
 }
