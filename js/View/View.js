@@ -1,15 +1,15 @@
 class View {
     
-    constructor(_viewBoard, _boardSizeInput, _gameTypeInput, _gameOverOutput, _pointsTableOutput)
+    constructor(_viewBoard, _boardSizeInput, _gameTypeInput, _gameOverInput, _pointsTableOutput)
     {
         this.board =_viewBoard;
         this.boardSizeInput = _boardSizeInput;
         this.gameTypeInput = _gameTypeInput;
-        this.gameOverOutput = _gameOverOutput;
+        this.gameOverInput = _gameOverInput;
         this.pointsTableOutput = _pointsTableOutput;
     }
 
-    wonGame = () => this.gameOverOutput.printGameOver();
+    wonGame = () => { return this.gameOverInput.gameOver()};
     getBoardSize = () => this.boardSizeInput.getBoardSize();
     getGameType = () => this.gameTypeInput.getGameType();
     renderPointsTable = (pointsTableArray) => this.pointsTableOutput.renderPointsTable(pointsTableArray);

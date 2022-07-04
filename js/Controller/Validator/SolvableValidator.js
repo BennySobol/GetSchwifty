@@ -5,7 +5,20 @@ class SolvableValidator
       
     }
 
-    countInversions(board)
+    _isBoardSolved(board)
+    {
+        var i = 0;
+        for (i = 0; i < board.values.length - 2; i++)
+        {
+            if (board.values[i] > board.values[i+1])
+            {
+                return false;
+            }
+        }
+        return board.values[i+1]==0;
+    }
+
+    _countInversions(board)
     {
         let inversions = 0;
         let blankRow = 0;
@@ -30,7 +43,11 @@ class SolvableValidator
 
     validateBoardSolvable(board)
     {
-        let {inversions, blankRow} = this.countInversions(board);
+        if(this._isBoardSolved(board))
+        {
+            return false;
+        }
+        let {inversions, blankRow} = this._countInversions(board);
         if (board.size % 2 == 0)
         {
             return (inversions + blankRow) % 2 == 0;

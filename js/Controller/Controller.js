@@ -29,9 +29,9 @@ class Controller {
         }
         if(this.gameController.isGameOver())
         {
-            this.view.wonGame();
+            let name = this.view.wonGame();
             let gameBoard =  this.gameController.board;
-            this.model.addEntry(gameBoard.size, gameBoard.startDate, gameBoard.numOfMoves, this.gameType);
+            this.model.addEntry(gameBoard.size, gameBoard.startDate, gameBoard.numOfMoves, this.gameType, name);
         }
     }
 }

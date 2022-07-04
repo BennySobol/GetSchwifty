@@ -21,7 +21,6 @@ class PointsTableOutput {
         document.getElementById('pointsTable').appendChild(ul);
         
         pointsTableArray.forEach(entry => {
-            console.log(entry);
             let li = document.createElement('li');
             ul.appendChild(li);
         
