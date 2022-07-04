@@ -31,7 +31,6 @@ class SolvableValidator
     validateBoardSolvable(board)
     {
         let {inversions, blankRow} = this.countInversions(board);
-        console.log(inversions, blankRow);
         if (board.size % 2 == 0)
         {
             return (inversions + blankRow) % 2 == 0;

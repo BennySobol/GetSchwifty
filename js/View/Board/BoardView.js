@@ -30,10 +30,7 @@ class BoardView
 
                 let cellBoardIndex = rowIndex*board.size+colIndex;
                 let tile = new Tile(board.values[cellBoardIndex]);
-                
-                //cellElement.addEventListener('click', () => { this.onTileClick(cellBoardIndex); 
-                ///*this.moveTile(cellBoardIndex, cellBoardIndex+1, board.size)*/ });
-
+            
                 cellElement.appendChild(tile.renderTile()); 
             }
         }

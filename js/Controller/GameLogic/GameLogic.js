@@ -24,15 +24,23 @@ class GameLogic
         return (xDeleta + yDeleta) == 1;
     }
 
+    moveTile(index)
+    {
+        this.board.moveTile(index, this.blunkTileIndex);
+        this.blunkTileIndex = index;
+    }
+
     isGameOver()
     {
-        for (let i = 0; i < this.board.values.length - 1; i++)
+        var i = 0;
+        console.log(this.board.values);
+        for (i = 0; i < this.board.values.length - 2; i++)
         {
             if (this.board.values[i] > this.board.values[i+1])
             {
                 return false;
             }
         }
-        return true;
+        return this.board.values[i+1]==0;
     }
 }
