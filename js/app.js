@@ -2,7 +2,8 @@ window.addEventListener("load", ()=> {
 
     // View
     let boardView = new BoardView();
-    let view = new View(boardView);
+    let boardSizeInput = new BoardSizeInput();
+    let view = new View(boardView, boardSizeInput);
 
     // Controller
 
@@ -10,11 +11,10 @@ window.addEventListener("load", ()=> {
     let solvableValidator = new SolvableValidator()
 
     let validBoardGenerator = new ValidBoardGenerator(boardShuffle, solvableValidator);
-    let solvableBoard = validBoardGenerator.GenerateValidBoard(2);
 
-    let gameController = new GameLogic(solvableBoard)
+    let gameController = new GameLogic(validBoardGenerator)
 
-    let controller = new Controller("modle", view, gameController)
+    _ = new Controller("modle", view, gameController)
 });
 
 
