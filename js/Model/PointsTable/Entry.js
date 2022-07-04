@@ -9,9 +9,4 @@ class Entry
         this.playerName = _playerName;
         this.points = (_boardSize*_boardSize)/(_numOfMoves + 1);
     }
-
-    toString() 
-    {
-        return `Moves: ${this.numOfMoves}, Player: ${this.playerName}, Start date: ${this.startDate}, Board size: ${this.boardSize}`;
-    }
 }
