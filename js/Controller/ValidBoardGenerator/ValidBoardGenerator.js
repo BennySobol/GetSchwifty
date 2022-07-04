@@ -6,7 +6,7 @@ class ValidBoardGenerator
         this.solvableValidator = _solvableValidator;
     }
 
-    GenerateValidBoard(boardSize)
+    generateValidBoard(boardSize)
     {
         var board = new Board(boardSize);
         do
