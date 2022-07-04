@@ -34,3 +34,6 @@ td{
     border: none;
 }
 
+.tile img {
+    width: 100%;
+ }

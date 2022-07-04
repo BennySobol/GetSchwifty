@@ -1,7 +1,8 @@
 class BoardView
 {
-    constructor()
+    constructor(_tileFactory)
     {
+        this.tileFactory = _tileFactory;
         this.boardElement = document.getElementById('board');
     }
 
@@ -14,7 +15,7 @@ class BoardView
         }
     }
 
-    renderBoard(board)
+    renderBoard(board, tileType)
     { 
         for(let rowIndex=0; rowIndex < board.size; rowIndex++)
         {
@@ -24,8 +25,7 @@ class BoardView
                 let cellElement =  rowElement.insertCell(colIndex);
 
                 let cellBoardIndex = rowIndex*board.size+colIndex;
-                let tile = new Tile(board.values[cellBoardIndex]);
-            
+                let tile = this.tileFactory.getTile(tileType, board.values[cellBoardIndex]);
                 cellElement.appendChild(tile.renderTile()); 
             }
         }

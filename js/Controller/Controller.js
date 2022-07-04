@@ -5,10 +5,13 @@ class Controller {
       this.view = _view;
       this.gameController = _gameLogic;
   
-      let boardSize = this.view.getBoardSize();
+      let gameType = this.view.getGameType();
+      
+      let boardSize =  gameType ? this.view.getBoardSize() : 3;
+
       this.gameController.generateNewBoard(boardSize);
 
-      this.view.board.renderBoard(this.gameController.board);
+      this.view.board.renderBoard(this.gameController.board, gameType);
       this.view.board.bindOnTileClick(this.onTileClick, this.gameController.board.size)
     }
   
