@@ -1,9 +1,11 @@
 window.addEventListener("load", ()=> {
 
     // View
-    let boardView = new BoardView();
+    let tileFactory = new TileFactory();
+    let boardView = new BoardView(tileFactory);
     let boardSizeInput = new BoardSizeInput();
-    let view = new View(boardView, boardSizeInput);
+    let gameTypeInput = new GameTypeInput();
+    let view = new View(boardView, boardSizeInput, gameTypeInput);
 
     // Controller
 
