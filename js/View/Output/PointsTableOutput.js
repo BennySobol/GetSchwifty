@@ -53,6 +53,6 @@ class PointsTableOutput {
 
     _renderEntry(entry) 
     {
-        return ` Player: ${entry.playerName}, moves: ${entry.numOfMoves}, dificulty: ${entry.boardSize}, date: ${entry.startDate}`;
+        return ` Player: ${entry.playerName}, moves: ${entry.numOfMoves}, dificulty: ${entry.boardSize}, type: ${entry.gameType ? "Text" : "Image"}, date: ${entry.startDate}`;
     }
 }

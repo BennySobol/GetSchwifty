@@ -1,4 +1,5 @@
-class Controller {
+class Controller 
+{
     constructor(_model, _view, _gameLogic)
     {
       this.model = _model;
@@ -13,9 +14,7 @@ class Controller {
 
       this.view.board.renderBoard(this.gameController.board, this.gameType);
       
-      
       this.view.renderPointsTable(this.model.pointsTable.pointsArray);
-     
      
       this.view.board.bindOnTileClick(this.onTileClick, this.gameController.board.size)
     }

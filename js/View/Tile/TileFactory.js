@@ -4,13 +4,13 @@ class TileFactory
     {
         this.TileTypes = {
             Image: 0,
-            Numbermatic: 1
+            Text: 1
         }
     }
 
     getTile(type, index)
     {
-        if(type == this.TileTypes.Numbermatic)
+        if(type == this.TileTypes.Text)
         {
             return new TextTile(index);
         }
