@@ -40,7 +40,9 @@ td{
     width: 100%;
  }
 
-
+img {
+    pointer-events: none;
+}
 /* leaderboard */
 .leaderboard-container
 {

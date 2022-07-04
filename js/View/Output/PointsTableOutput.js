@@ -1,10 +1,5 @@
-class PointsTableOutput {
-    
-    constructor()
-    {
-
-    }
-    
+class PointsTableOutput 
+{
     renderPointsTable(pointsTableArray)
     {
         const leaderboard = document.getElementById('leaderboard');

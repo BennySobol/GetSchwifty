@@ -1,10 +1,5 @@
 class BoardShuffle
 {
-    constructor()
-    {
-      
-    }
-    
     shuffleBoardValues(array)
     {
         let currentIndex = array.length, randomIndex;

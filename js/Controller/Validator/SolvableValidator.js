@@ -1,9 +1,5 @@
 class SolvableValidator
 {
-    constructor()
-    {
-      
-    }
 
     _isBoardSolved(board)
     {
