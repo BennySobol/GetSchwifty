@@ -5,7 +5,13 @@ window.addEventListener("load", ()=> {
     let boardView = new BoardView(tileFactory);
     let boardSizeInput = new BoardSizeInput();
     let gameTypeInput = new GameTypeInput();
-    let view = new View(boardView, boardSizeInput, gameTypeInput);
+    let gameOverOutput = new GameOverOutput();
+    let pointsTableOutput = new PointsTableOutput();
+    let view = new View(boardView, boardSizeInput, gameTypeInput, gameOverOutput, pointsTableOutput);
+
+    // Model
+    let pointsTable = new PointsTable();
+    let model = new Model(pointsTable);
 
     // Controller
 
@@ -16,7 +22,7 @@ window.addEventListener("load", ()=> {
 
     let gameController = new GameLogic(validBoardGenerator)
 
-    _ = new Controller("modle", view, gameController)
+    _ = new Controller(model, view, gameController)
 });
 
 
