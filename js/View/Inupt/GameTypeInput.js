@@ -1,13 +1,8 @@
-class GameTypeInput {
-    
-    constructor()
-    {
-
-    }
-    
+class GameTypeInput 
+{
     getGameType() 
     {
-        var type = prompt('Enter game type:\nnumbermatic or any thing else for images', 'numbermatic');
-        return type == 'numbermatic';
+        var type = prompt('Enter game mode:\nType "Text" for normal mode or anything else for image mode', 'Text');
+        return type == 'Text';
     }
 }

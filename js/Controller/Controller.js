@@ -1,17 +1,21 @@
-class Controller {
+class Controller 
+{
     constructor(_model, _view, _gameLogic)
     {
       this.model = _model;
       this.view = _view;
       this.gameController = _gameLogic;
   
-      let gameType = this.view.getGameType();
+      this.gameType = this.view.getGameType();
       
-      let boardSize =  gameType ? this.view.getBoardSize() : 3;
+      let boardSize =  this.gameType ? this.view.getBoardSize() : 3;
 
       this.gameController.generateNewBoard(boardSize);
 
-      this.view.board.renderBoard(this.gameController.board, gameType);
+      this.view.board.renderBoard(this.gameController.board, this.gameType);
+      
+      this.view.renderPointsTable(this.model.pointsTable.pointsArray);
+     
       this.view.board.bindOnTileClick(this.onTileClick, this.gameController.board.size)
     }
   
@@ -24,7 +28,9 @@ class Controller {
         }
         if(this.gameController.isGameOver())
         {
-            this.view.wonGame()
+            let name = this.view.wonGame();
+            let gameBoard =  this.gameController.board;
+            this.model.addEntry(gameBoard.size, gameBoard.startDate, gameBoard.numOfMoves, this.gameType, name);
         }
     }
 }

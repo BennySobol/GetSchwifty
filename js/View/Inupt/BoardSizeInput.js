@@ -1,10 +1,5 @@
-class BoardSizeInput {
-    
-    constructor()
-    {
-
-    }
-    
+class BoardSizeInput 
+{
     getBoardSize() 
     {
         var min = 2;
