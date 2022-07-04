@@ -1,8 +1,14 @@
 class GameLogic
 {
-    constructor(_board)
+    constructor(_boardGenerator)
     {
-        this.board = _board;
+        this.boardGenerator = _boardGenerator;
+    }
+
+    generateNewBoard(boardSize)
+    {
+        let board = this.boardGenerator.generateValidBoard(boardSize);
+        this.board = board;
         this.blunkTileIndex = this.board.values.findIndex((x) => !x);
     }
 
@@ -33,7 +39,6 @@ class GameLogic
     isGameOver()
     {
         var i = 0;
-        console.log(this.board.values);
         for (i = 0; i < this.board.values.length - 2; i++)
         {
             if (this.board.values[i] > this.board.values[i+1])

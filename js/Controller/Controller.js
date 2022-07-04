@@ -5,6 +5,9 @@ class Controller {
       this.view = _view;
       this.gameController = _gameLogic;
   
+      let boardSize = this.view.getBoardSize();
+      this.gameController.generateNewBoard(boardSize);
+
       this.view.board.renderBoard(this.gameController.board);
       this.view.board.bindOnTileClick(this.onTileClick, this.gameController.board.size)
     }
@@ -18,7 +21,7 @@ class Controller {
         }
         if(this.gameController.isGameOver())
         {
-            setTimeout("alert('You have won the game!');", 1);
+            this.view.wonGame()
         }
     }
 }
