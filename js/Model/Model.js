@@ -5,8 +5,8 @@ class Model
         this.pointsTable = _pointsTable;
     }
 
-    addEntry = (boardSize, startDate, numOfMoves, gameType) => 
+    addEntry = (boardSize, startDate, numOfMoves, gameType, playerName) => 
     { 
-        this.pointsTable.addEntry(boardSize, startDate, numOfMoves, gameType);
+        this.pointsTable.addEntry(boardSize, startDate, numOfMoves, gameType, playerName);
     }
 }

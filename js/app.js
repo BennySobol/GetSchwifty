@@ -5,9 +5,9 @@ window.addEventListener("load", ()=> {
     let boardView = new BoardView(tileFactory);
     let boardSizeInput = new BoardSizeInput();
     let gameTypeInput = new GameTypeInput();
-    let gameOverOutput = new GameOverOutput();
+    let gameOverInput = new GameOverInput();
     let pointsTableOutput = new PointsTableOutput();
-    let view = new View(boardView, boardSizeInput, gameTypeInput, gameOverOutput, pointsTableOutput);
+    let view = new View(boardView, boardSizeInput, gameTypeInput, gameOverInput, pointsTableOutput);
 
     // Model
     let pointsTable = new PointsTable();

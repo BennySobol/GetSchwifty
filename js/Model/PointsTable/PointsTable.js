@@ -5,7 +5,7 @@ class PointsTable
         this.pointsArray = JSON.parse(localStorage.getItem('pointsArray')) || []
     }
 
-    addEntry(boardSize, startDate, numOfMoves, gameType, playerName = "Anonymous")
+    addEntry(boardSize, startDate, numOfMoves, gameType, playerName)
     {
         let newEntry = new Entry(boardSize, startDate, numOfMoves, gameType, playerName);
         this.pointsArray.push(newEntry);
