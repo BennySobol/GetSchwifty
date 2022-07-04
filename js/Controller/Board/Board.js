@@ -5,4 +5,9 @@ class Board
         this.size = _size;
         this.values = Array.from(Array(_size*_size).keys());
     }
+
+    clickElement(index)
+    {
+        //alert(index)
+    }
 }

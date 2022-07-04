@@ -4,7 +4,7 @@ window.addEventListener("load", ()=> {
     let solvableValidator = new SolvableValidator()
 
     let validBoardGenerator = new ValidBoardGenerator(boardShuffle, solvableValidator);
-    let solvableBoard = validBoardGenerator.GenerateValidBoard(3);
+    let solvableBoard = validBoardGenerator.GenerateValidBoard(6);
     console.log(solvableBoard)
 
     let board = new BoardView();
