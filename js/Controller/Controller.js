@@ -18,7 +18,7 @@ class Controller {
         }
         if(this.gameController.isGameOver())
         {
-            alert("You have won the game!")
+            setTimeout("alert('You have won the game!');", 1);
         }
     }
 }
