@@ -7,15 +7,10 @@ class BoardView
 
     bindOnTileClick(callback, size)
     {
-        let cellBoardIndex = 0;
-        for(let rowIndex=0; rowIndex < size; rowIndex++)
+        for(let cellIndex=0; cellIndex < size*size; cellIndex++)
         {
-            for(let colIndex=0; colIndex< size; colIndex++)
-            {
-                let index = cellBoardIndex++;
-                let cell = this._getTableCell(rowIndex, colIndex);
-                cell.addEventListener('click', () => { callback(index)});; 
-            }
+            let cell =  this._getTableCell(this._getPointFromIndex(cellIndex, size));
+            cell.addEventListener('click', () => { callback(cellIndex)});
         }
     }
 
@@ -36,15 +31,23 @@ class BoardView
         }
     }
 
-    _getTableCell(row, col)
+    _getPointFromIndex(index, size)
+    {
+        return {
+            x : Number.parseInt(index/size),
+            y : (index%size)
+       };
+    }
+    
+    _getTableCell(point)
     { 
-        return this.boardElement.rows[row].cells[col];
+        return this.boardElement.rows[point.x].cells[point.y];
     }
 
     moveTile(fromIndex, toIndex, size)
     {
-        let fromElement = this._getTableCell(Number.parseInt(fromIndex/size), fromIndex%size);
-        let toElement = this._getTableCell(Number.parseInt(toIndex/size), toIndex%size);
+        let fromElement = this._getTableCell(this._getPointFromIndex(fromIndex, size));
+        let toElement = this._getTableCell(this._getPointFromIndex(toIndex, size));
         let temp = fromElement.innerHTML;
 
         fromElement.innerHTML = toElement.innerHTML;
