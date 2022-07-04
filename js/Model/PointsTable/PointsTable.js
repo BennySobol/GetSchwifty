@@ -11,7 +11,7 @@ class PointsTable
         this.pointsArray.push(newEntry);
 
         this.pointsArray.sort(function(a, b) {
-            return a.points - b.points;
+            return b.points - a.points;
         });
         this.pointsArray = this.pointsArray.slice(0, 5);
 
