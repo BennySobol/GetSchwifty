@@ -7,6 +7,16 @@ class PointsTableOutput {
     
     renderPointsTable(pointsTableArray)
     {
+        const leaderboard = document.getElementById('leaderboard');
+        leaderboard.innerHTML = `
+        <div class="leaderboard-container">
+            <div class="leaderboard">
+                <div class="head">
+                    <h1>Score Board</h1>
+                </div>
+                <div id="pointsTable"></div>
+            </div>
+        </div>`
         const ul = document.createElement('ul');
         document.getElementById('pointsTable').appendChild(ul);
         

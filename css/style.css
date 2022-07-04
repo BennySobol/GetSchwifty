@@ -40,11 +40,13 @@ td{
     width: 100%;
  }
 
-.container
+
+/* leaderboard */
+.leaderboard-container
 {
     padding-top: 1rem;
 }
-/* leaderboard */
+
 .leaderboard {
   background: linear-gradient(to bottom, #3a404d, #181c26);
 }
