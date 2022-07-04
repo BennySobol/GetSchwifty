@@ -2,11 +2,11 @@ class GameLogic
 {
     constructor(_board)
     {
-        this.board = board;
-        this.blunkTileIndex = board.values.find(0)
+        this.board = _board;
+        this.blunkTileIndex = this.board.values.findIndex((x) => !x);
     }
 
-    getPointFromIndex(index, size)
+    _getPointFromIndex(index, size)
     {
         return {
             x : Number.parseInt(index/size),
@@ -14,15 +14,14 @@ class GameLogic
        };
     }
 
-    tryMoveTile(index)
+    canMoveTile(index)
     {
-        size = this.board.size;
-        let indexPoint = getPointFromIndex(index);
-        let blunkPoint = getPointFromIndex(this.blunkTileIndex);
+        let indexPoint = this._getPointFromIndex(index, this.board.size);
+        let blunkPoint = this._getPointFromIndex(this.blunkTileIndex, this.board.size);
 
         let xDeleta = Math.abs(indexPoint.x - blunkPoint.x);
-        let yDeleta =  Math.abs(indexPoint.y - blunkPoint.y)
-        return  (xDeleta + yDeleta) == 1;
+        let yDeleta =  Math.abs(indexPoint.y - blunkPoint.y);
+        return (xDeleta + yDeleta) == 1;
     }
 
     isGameOver()
