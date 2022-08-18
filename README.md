@@ -1,6 +1,7 @@
 # Get Schwifty  
 
-### Generate a solvable sliding tile puzzles
+### Generate a solvable sliding tile puzzles  
+[Play Get Schwifty](https://bennysobol.github.io/GetSchwifty/)  
 
 <p align="left">
     <img src="docs/Capture_2.PNG" width="500" title="Numbers">
