@@ -1,4 +1,6 @@
-class ValidBoardGenerator
+import Board from "./../Board/Board.js"  
+
+export default class ValidBoardGenerator
 {
     constructor(_boardShuffle, _solvableValidator)
     {

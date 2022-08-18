@@ -1,4 +1,8 @@
-class TileFactory
+import ImageTile from "./ImageTile.js"  
+import TextTile from "./TextTile.js"  
+
+
+export default class TileFactory
 {
     constructor()
     {
@@ -8,7 +12,7 @@ class TileFactory
         }
     }
 
-    getTile(type, index)
+    getTile(type, index, size)
     {
         if(type == this.TileTypes.Text)
         {
@@ -16,7 +20,7 @@ class TileFactory
         }
         else if(type == this.TileTypes.Image)
         {
-            return new ImageTile(index);
+            return new ImageTile(index, size);
         }
     }
 }

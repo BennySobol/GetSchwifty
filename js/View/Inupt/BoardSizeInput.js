@@ -1,4 +1,4 @@
-class BoardSizeInput 
+export default class BoardSizeInput 
 {
     getBoardSize() 
     {

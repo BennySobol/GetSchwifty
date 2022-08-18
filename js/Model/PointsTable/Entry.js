@@ -1,4 +1,4 @@
-class Entry
+export default class Entry
 {
     constructor(_boardSize, _startDate, _numOfMoves, _gameType, _playerName)
     {
