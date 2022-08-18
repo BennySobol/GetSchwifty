@@ -1,4 +1,4 @@
-class GameLogic
+export default class GameLogic
 {
     constructor(_boardGenerator)
     {
@@ -15,8 +15,8 @@ class GameLogic
     _getPointFromIndex(index, size)
     {
         return {
-            x : Number.parseInt(index/size),
-            y : (index%size)
+            y : Number.parseInt(index/size),
+            x : (index%size)
        };
     }
 

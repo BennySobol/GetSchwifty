@@ -1,4 +1,4 @@
-class GameOverInput
+export default class GameOverInput
  {
     gameOver() 
     {

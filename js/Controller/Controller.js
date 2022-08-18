@@ -1,4 +1,4 @@
-class Controller 
+export default class Controller 
 {
     constructor(_model, _view, _gameLogic)
     {
@@ -8,7 +8,7 @@ class Controller
   
       this.gameType = this.view.getGameType();
       
-      let boardSize =  this.gameType ? this.view.getBoardSize() : 3;
+      let boardSize = this.view.getBoardSize();
 
       this.gameController.generateNewBoard(boardSize);
 

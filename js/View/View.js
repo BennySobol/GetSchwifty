@@ -1,4 +1,4 @@
-class View {
+export default class View {
     
     constructor(_viewBoard, _boardSizeInput, _gameTypeInput, _gameOverInput, _pointsTableOutput)
     {

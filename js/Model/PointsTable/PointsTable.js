@@ -1,4 +1,4 @@
-class PointsTable
+export default class PointsTable
 {
     constructor()
     {

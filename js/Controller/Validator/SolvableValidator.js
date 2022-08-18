@@ -1,4 +1,4 @@
-class SolvableValidator
+export default class SolvableValidator
 {
 
     _isBoardSolved(board)

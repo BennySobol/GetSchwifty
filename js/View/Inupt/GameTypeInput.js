@@ -1,4 +1,4 @@
-class GameTypeInput 
+export default class GameTypeInput 
 {
     getGameType() 
     {

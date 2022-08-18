@@ -1,4 +1,19 @@
-class Bootstrapper
+import BoardView from "./View/Board/BoardView.js"
+import TileFactory from "./View/Tile/TileFactory.js"
+import BoardSizeInput from "./View/Inupt/BoardSizeInput.js"  
+import GameTypeInput from "./View/Inupt/GameTypeInput.js"  
+import GameOverInput from "./View/Inupt/GameOverInput.js"
+import PointsTableOutput from "./View/Output/PointsTableOutput.js"
+import View from "./View/View.js" 
+import PointsTable from "./Model/PointsTable/PointsTable.js" 
+import Model from "./Model/Model.js"
+import GameLogic from "./Controller/GameLogic/GameLogic.js" 
+import BoardShuffle from "./Controller/Shuffle/BoardShuffle.js" 
+import SolvableValidator from "./Controller/Validator/SolvableValidator.js" 
+import ValidBoardGenerator from "./Controller/ValidBoardGenerator/ValidBoardGenerator.js" 
+import Controller from "./Controller/Controller.js"
+
+export default class Bootstrapper
 {
     bootstrapper()
     {

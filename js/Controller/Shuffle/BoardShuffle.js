@@ -1,4 +1,4 @@
-class BoardShuffle
+export default class BoardShuffle
 {
     shuffleBoardValues(array)
     {

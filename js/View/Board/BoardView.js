@@ -1,4 +1,4 @@
-class BoardView
+export default class BoardView
 {
     constructor(_tileFactory)
     {
@@ -25,7 +25,7 @@ class BoardView
                 let cellElement =  rowElement.insertCell(colIndex);
 
                 let cellBoardIndex = rowIndex*board.size+colIndex;
-                let tile = this.tileFactory.getTile(tileType, board.values[cellBoardIndex]);
+                let tile = this.tileFactory.getTile(tileType, board.values[cellBoardIndex], board.size);
                 cellElement.appendChild(tile.renderTile()); 
             }
         }

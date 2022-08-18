@@ -1,4 +1,4 @@
-class PointsTableOutput 
+export default class PointsTableOutput 
 {
     renderPointsTable(pointsTableArray)
     {

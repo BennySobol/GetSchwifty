@@ -1,4 +1,4 @@
-class TextTile
+export default class TextTile
 {
     constructor(_displayValue)
     {
