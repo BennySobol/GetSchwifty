@@ -31,6 +31,7 @@ export default class Controller
             let name = this.view.wonGame();
             let gameBoard =  this.gameController.board;
             this.model.addEntry(gameBoard.size, gameBoard.startDate, gameBoard.numOfMoves, this.gameType, name);
+            location.reload();
         }
     }
 }
